@@ -1,19 +1,49 @@
 <template>
   <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <HelloWorld msg="Controle de produtos"/>
+
+    <span> OLA </span>
+
+    <ProductsList produtos="produtos">
+
+  
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ProductsList from './components/ProductsList';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ProductsList
+  },
+ data() {
+   return { 
+   produtos: [  
+        {
+            id: '1',
+            categoria: 'Celulares',
+            descricao: 'Iphone 11 dourado',
+            publishedAt: '2020-08-25'
+        },
+        {
+            id: '2',
+            categoria: 'Notebooks',
+            descricao: 'Notebook Dell Ispiron',
+            publishedAt: '2020-08-15'
+        },
+        {
+            id: '3',
+            categoria: 'Eletronicos',
+            descricao: 'Cafeteira',
+            publishedAt: '2020-08-25'
+        }
+    ]
   }
+ }
 }
+
 </script>
 
 <style>

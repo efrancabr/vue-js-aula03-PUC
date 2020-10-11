@@ -1,8 +1,24 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from "vue";
+import App from "./App.vue";
+import { store } from "./store";
+import VueRouter from "vue-router";
 
-Vue.config.productionTip = false
+import ProductForm from "./components/ProductForm";
+import ProductList from "./components/ProductList";
+
+Vue.config.productionTip = false;
+
+Vue.use(VueRouter);
+
+const router = new VueRouter({
+  routes: [
+    { path: "/", component: ProductForm },
+    { path: "/list", component: ProductList },
+  ],
+});
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  store,
+  router,
+  render: (h) => h(App),
+}).$mount("#app");

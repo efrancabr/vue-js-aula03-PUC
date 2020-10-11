@@ -1,49 +1,24 @@
 <template>
   <div id="app">
-
-    <span> OLA </span>
-
-    <ProductsList produtos="produtos">
-
-  
-
+    <nav class="main-menu">
+      <ul>
+        <li>
+          <router-link to="/">Home </router-link>
+        </li>
+        <li>
+          <router-link to="/list">List</router-link>
+        </li>
+      </ul>
+    </nav>
+    <router-view />
   </div>
 </template>
 
 <script>
-import ProductsList from './components/ProductsList';
 
 export default {
-  name: 'App',
-  components: {
-    ProductsList
-  },
- data() {
-   return { 
-   produtos: [  
-        {
-            id: '1',
-            categoria: 'Celulares',
-            descricao: 'Iphone 11 dourado',
-            publishedAt: '2020-08-25'
-        },
-        {
-            id: '2',
-            categoria: 'Notebooks',
-            descricao: 'Notebook Dell Ispiron',
-            publishedAt: '2020-08-15'
-        },
-        {
-            id: '3',
-            categoria: 'Eletronicos',
-            descricao: 'Cafeteira',
-            publishedAt: '2020-08-25'
-        }
-    ]
-  }
- }
+  name: "App",
 }
-
 </script>
 
 <style>
@@ -54,5 +29,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.main-menu ul {
+  list-style-type: none;
 }
 </style>
